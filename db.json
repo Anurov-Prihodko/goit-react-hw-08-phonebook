@@ -1,0 +1,28 @@
+{
+  "mainState": [
+    {
+      "name": "Rosie Simpson",
+      "number": "567-45-00",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "name": "Alla Kasatka",
+      "number": "234-23-26",
+      "completed": true,
+      "id": 6
+    },
+    {
+      "name": "Olexsii Anyrov",
+      "number": "000-23-26",
+      "completed": true,
+      "id": 7
+    },
+    {
+      "name": "Mark Tiian",
+      "number": "459-12-56",
+      "completed": false,
+      "id": 8
+    }
+  ]
+}
