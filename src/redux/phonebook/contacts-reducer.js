@@ -16,15 +16,6 @@ import {
   fetchContactsError,
 } from './contacts-actions';
 
-const contactsArray = [
-  // {
-  //   id: '',
-  //   name: '',
-  //   number: '',
-  //   completed: false,
-  // },
-];
-
 const addContactReducer = (state, { payload }) => {
   if (state.find(({ name }) => name === payload.name)) {
     alert(`${payload.name} is already in contacts.`);
@@ -39,7 +30,7 @@ const deleteContactReducer = (state, { payload }) =>
 const toggleCompletedReducer = (state, { payload }) =>
   state.map(contact => (contact.id === payload.id ? payload : contact));
 
-const contacts = createReducer(contactsArray, {
+const note = createReducer([], {
   [fetchContactsSuccess]: (_, { payload }) => payload,
   [addContactSuccess]: addContactReducer,
 
@@ -77,7 +68,7 @@ const loading = createReducer(false, {
 });
 
 export default combineReducers({
-  contacts,
+  note,
   filter,
   loading,
 });

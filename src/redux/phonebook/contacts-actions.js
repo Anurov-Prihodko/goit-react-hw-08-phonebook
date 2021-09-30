@@ -1,34 +1,20 @@
 import { createAction } from '@reduxjs/toolkit';
 
-const fetchContactsRequest = createAction('mainState/fetchContactsRequest');
-const fetchContactsSuccess = createAction('mainState/fetchContactsSuccess');
-const fetchContactsError = createAction('mainState/fetchContactsError');
+const fetchContactsRequest = createAction('contacts/fetchContactsRequest');
+const fetchContactsSuccess = createAction('contacts/fetchContactsSuccess');
+const fetchContactsError = createAction('contacts/fetchContactsError');
 
-const addContactRequest = createAction('mainState/addContactRequest');
-const addContactSuccess = createAction('mainState/addContactSuccess');
-const addContactError = createAction('mainState/addContactError');
+const addContactRequest = createAction('contacts/addContactRequest');
+const addContactSuccess = createAction('contacts/addContactSuccess');
+const addContactError = createAction('contacts/addContactError');
 
-const deleteContactRequest = createAction('mainState/deleteContactRequest');
-const deleteContactSuccess = createAction('mainState/deleteContactSuccess');
-const deleteContactError = createAction('mainState/deleteContactError');
+const deleteContactRequest = createAction('contacts/deleteContactRequest');
+const deleteContactSuccess = createAction('contacts/deleteContactSuccess');
+const deleteContactError = createAction('contacts/deleteContactError');
 
-const toggleCompletedRequest = createAction('mainState/toggleCompletedRequest');
-const toggleCompletedSuccess = createAction('mainState/toggleCompletedSuccess');
-const toggleCompletedError = createAction('mainState/toggleCompletedError');
-
-// ===== Без json-server =====
-
-// const addContact = createAction('phonebook/add', (name, number) => ({
-//   payload: {
-//     id: shortid.generate(),
-//     name,
-//     number,
-//     completed: false,
-//   },
-// }));
-
-// const deleteContact = createAction('phonebook/delete');
-// const toggleCompleted = createAction('phonebook/toggleCompleted');
+const toggleCompletedRequest = createAction('contacts/toggleCompletedRequest');
+const toggleCompletedSuccess = createAction('contacts/toggleCompletedSuccess');
+const toggleCompletedError = createAction('contacts/toggleCompletedError');
 
 const changeFilter = createAction('phonebook/changeFilter');
 
@@ -47,6 +33,20 @@ export {
   fetchContactsSuccess,
   fetchContactsError,
 };
+
+// ===== Без json-server =====
+
+// const addContact = createAction('phonebook/add', (name, number) => ({
+//   payload: {
+//     id: shortid.generate(),
+//     name,
+//     number,
+//     completed: false,
+//   },
+// }));
+
+// const deleteContact = createAction('phonebook/delete');
+// const toggleCompleted = createAction('phonebook/toggleCompleted');
 
 // ===== БЕЗ БИБЛИОТЕКИ TOOLKIT =====
 

@@ -1,5 +1,7 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import {
+  // persistStore,
+  // persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -8,7 +10,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import logger from 'redux-logger';
-import { contacts } from './phonebook';
+import { todosReducer } from './phonebook';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -21,7 +23,7 @@ const middleware = [
 
 const store = configureStore({
   reducer: {
-    mainState: contacts,
+    contacts: todosReducer,
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',
