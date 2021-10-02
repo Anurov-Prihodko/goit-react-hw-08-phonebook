@@ -3,14 +3,14 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
-const token = {
-  set(token) {
-    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-  },
-  unset() {
-    axios.defaults.headers.common.Authorization = '';
-  },
-};
+// const token = {
+//   set(token) {
+//     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+//   },
+//   unset() {
+//     axios.defaults.headers.common.Authorization = '';
+//   },
+// };
 
 /*
  * POST @ /users/signup
@@ -19,11 +19,13 @@ const token = {
  */
 
 const register = createAsyncThunk('auth/register', async credentials => {
+  // console.log('credentials: ', credentials);
   try {
     const { data } = await axios.post('/users/signup', credentials);
-    token.set(data.token);
+    // token.set(data.token);
     return data;
   } catch (error) {
+    console.log(error);
     // TODO: Добавить обработку ошибки error.message
   }
 });
@@ -36,7 +38,7 @@ const register = createAsyncThunk('auth/register', async credentials => {
 const logIn = createAsyncThunk('auth/login', async credentials => {
   try {
     const { data } = await axios.post('/users/login', credentials);
-    token.set(data.token);
+    // token.set(data.token);
     return data;
   } catch (error) {
     // TODO: Добавить обработку ошибки error.message
@@ -51,7 +53,7 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
 const logOut = createAsyncThunk('auth/logout', async () => {
   try {
     await axios.post('/users/logout');
-    token.unset();
+    // token.unset();
   } catch (error) {
     // TODO: Добавить обработку ошибки error.message
   }
@@ -76,7 +78,7 @@ const fetchCurrentUser = createAsyncThunk(
       return thunkAPI.rejectWithValue();
     }
 
-    token.set(persistedToken);
+    // token.set(persistedToken);
     try {
       const { data } = await axios.get('/users/current');
       return data;
@@ -92,4 +94,5 @@ const operations = {
   logIn,
   fetchCurrentUser,
 };
+
 export default operations;

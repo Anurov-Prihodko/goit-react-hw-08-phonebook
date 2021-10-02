@@ -33,17 +33,6 @@ const toggleCompletedReducer = (state, { payload }) =>
 const note = createReducer([], {
   [fetchContactsSuccess]: (_, { payload }) => payload,
   [addContactSuccess]: addContactReducer,
-
-  // ===== Не через функию =====
-
-  //   (contactsArray, { payload }) => {
-  //   if (contactsArray.find(({ name }) => name === payload.name)) {
-  //     alert(`${payload.name} is already in contacts.`);
-  //     return [...contactsArray];
-  //   }
-  //   return [...contactsArray, payload];
-  // },
-
   [deleteContactSuccess]: deleteContactReducer,
   [toggleCompletedSuccess]: toggleCompletedReducer,
 });
@@ -72,39 +61,3 @@ export default combineReducers({
   filter,
   loading,
 });
-
-// ===== БЕЗ БИБЛИОТЕКИ TOOLKIT =====
-
-// const filter = (state = '', { type, payload }) => {
-//   switch (type) {
-//     case CHANGE_FILTER:
-//       return payload;
-
-//     default:
-//       return state;
-//   }
-// };
-
-// const contacts = (state = contactsArray, { type, payload }) => {
-//   switch (type) {
-//     case ADD:
-//       if (state.find(({ name }) => name === payload.name)) {
-//         alert(`${payload.name} is already in contacts.`);
-//         return [...state];
-//       }
-//       return [...state, payload];
-
-//     case DELETE:
-//       return state.filter(({ id }) => id !== payload);
-
-//     case TOGGLE_COMPLETED:
-//       return state.map(contact =>
-//         contact.id === payload
-//           ? { ...contact, completed: !contact.completed }
-//           : contact,
-//       );
-
-//     default:
-//       return state;
-//   }
-// };

@@ -17,6 +17,12 @@ import {
 // axios.defaults.baseURL = 'http://localhost:4040';
 // axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
+// async function registerUser(credentials) {
+//   const { data } = await axios.post('/users/signup', credentials);
+//   // token.set(data.token);
+//   return data;
+// }
+
 // ===== Асинхронный вариант =====
 const fetchContacts = () => async dispatch => {
   dispatch(fetchContactsRequest());
