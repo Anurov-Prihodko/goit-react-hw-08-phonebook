@@ -8,8 +8,12 @@ export const getContactsLength = state => state.contacts.note.length;
 
 export const getCompleteContactsCount = createSelector(
   [getAllConatcts],
-  allContacts =>
-    allContacts.reduce((acc, note) => (note.completed ? acc + 1 : acc), 0),
+  allContacts => {
+    return allContacts.reduce(
+      (total, contact) => (contact.completed ? total + 1 : total),
+      0,
+    );
+  },
 );
 
 // ===== used in Filter.js =====
