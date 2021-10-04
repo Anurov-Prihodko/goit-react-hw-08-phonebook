@@ -24,7 +24,7 @@ const register = createAsyncThunk('auth/register', async credentials => {
     token.set(data.token);
     return data;
   } catch (error) {
-    new Error(error);
+    // new Error(error);
     alert(`Oops... Something went wrong: ${error}`);
   }
 });
@@ -40,7 +40,7 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
     token.set(data.token);
     return data;
   } catch (error) {
-    new Error(error);
+    // new Error(error);
     alert(`Oops... Something went wrong: ${error}`);
   }
 });
@@ -55,7 +55,7 @@ const logOut = createAsyncThunk('auth/logout', async () => {
     await axios.post('/users/logout');
     token.unset();
   } catch (error) {
-    new Error(error);
+    // new Error(error);
     alert(`Oops... Something went wrong: ${error}`);
   }
 });
@@ -77,7 +77,6 @@ const fetchCurrentUser = createAsyncThunk(
     // console.log(token);
 
     if (!persistedToken) {
-      // console.log('Токена нет, уходим из fetchCurrentUser');
       return thunkAPI.rejectWithValue();
     }
     token.set(persistedToken);
@@ -86,7 +85,7 @@ const fetchCurrentUser = createAsyncThunk(
       // console.log(data);
       return data;
     } catch (error) {
-      new Error(error);
+      // new Error(error);
       alert(`Oops... Something went wrong: ${error}`);
     }
   },

@@ -19,7 +19,7 @@ const HomeView = () => (
     <h1 style={styles.title}>
       Welcome to the app welcome page Phonebook
       <span role="img" aria-label="Welcome icon">
-        💁‍♀️
+        🤗
       </span>
     </h1>
   </div>
