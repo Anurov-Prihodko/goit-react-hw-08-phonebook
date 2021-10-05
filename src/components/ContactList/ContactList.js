@@ -8,7 +8,7 @@ import {
   getVisibleContacts,
 } from '../../redux/phonebook';
 
-const ContactList = () => {
+const ContactList = onSubmit => {
   const contacts = useSelector(getVisibleContacts);
   const dispatch = useDispatch();
 

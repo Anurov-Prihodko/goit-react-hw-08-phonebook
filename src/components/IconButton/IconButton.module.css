@@ -1,0 +1,13 @@
+.button {
+  margin: 0;
+  padding: 7px;
+  border: none;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  background-color: #4caf50;
+  cursor: pointer;
+  margin-left: 15px;
+}

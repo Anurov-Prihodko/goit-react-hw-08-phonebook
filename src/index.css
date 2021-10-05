@@ -62,3 +62,11 @@ td {
   width: 420px;
   text-align: center;
 }
+
+.iconButton {
+  border: none;
+  width: 18px;
+  height: 18px;
+  fill: #ffed4f;
+  text-align: center;
+}
