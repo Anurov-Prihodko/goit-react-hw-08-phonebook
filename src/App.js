@@ -25,7 +25,7 @@ export default function App() {
   const dispatch = useDispatch();
   const isFetching = useSelector(authSelectors.getFetching);
 
-  console.log(isFetching);
+  // console.log(isFetching);
 
   useEffect(() => {
     dispatch(authOperations.fetchCurrentUser());
