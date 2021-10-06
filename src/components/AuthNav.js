@@ -6,8 +6,10 @@ const styles = {
     display: 'inline-block',
     textDecoration: 'none',
     padding: 12,
+    fontSize: 18,
+    color: '#717579',
     fontWeight: 700,
-    color: '#2A363B',
+    // color: '#2A363B',
   },
   activeLink: {
     color: '#E84A5F',

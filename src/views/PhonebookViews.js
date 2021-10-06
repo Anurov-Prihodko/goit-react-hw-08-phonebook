@@ -2,12 +2,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import ContactList from '../components/ContactList';
 import ContactForm from '../components/ContactForm';
+import Container from '../components/Container';
 import Filter from '../components/Filter';
 import s from '../App.module.css';
 import Spinner from '../components/Spinner/Spinner';
 import Modal from '../components/Modal';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
-// import { ReactComponent as AddIcon } from '../icons/add.svg';
 import {
   fetchContacts,
   getLoading,
@@ -28,25 +28,25 @@ function PhonebookViews() {
   useEffect(() => dispatch(fetchContacts()), [dispatch]);
 
   return (
-    <div className={s.container}>
-      {/* <h1 className={s.mainTitle}>Phonebook</h1> */}
-      {/* <p className={s.text}>Number of selected: {completeContactsCount} </p> */}
-
-      <Filter />
-      <IconButton onClick={togleModal} aria-label="add contact">
-        <AiOutlinePlusCircle className="iconButton" />
-      </IconButton>
-
-      <p className={s.text}>Total contacts: {totalContactsCount}</p>
-      <h2 className={s.mainTitle}>Contacts:</h2>
-      {isLoading && <Spinner />}
-      {isModalOpen && (
-        <Modal onClose={togleModal}>
-          <ContactForm />
-        </Modal>
-      )}
-      <ContactList onSave={togleModal} />
-    </div>
+    <>
+      <Container>
+        <div className={s.block}>
+          <Filter />
+          <IconButton onClick={togleModal} aria-label="add contact">
+            <AiOutlinePlusCircle className="iconButton" />
+          </IconButton>
+        </div>
+        <p className={s.text}>Total contacts: {totalContactsCount}</p>
+        <h3 className={s.mainTitle}>Contacts:</h3>
+        {isLoading && <Spinner />}
+        {isModalOpen && (
+          <Modal onClose={togleModal}>
+            <ContactForm onSave={togleModal} />
+          </Modal>
+        )}
+        <ContactList />
+      </Container>
+    </>
   );
 }
 

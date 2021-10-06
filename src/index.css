@@ -53,20 +53,25 @@ body {
   line-height: 1.33333;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
 td {
   display: table-cell;
   vertical-align: inherit;
 }
 
 .spinner {
-  width: 420px;
+  width: 100%;
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .iconButton {
   border: none;
-  width: 18px;
-  height: 18px;
+  width: 25px;
+  height: 25px;
   fill: #ffed4f;
   text-align: center;
 }

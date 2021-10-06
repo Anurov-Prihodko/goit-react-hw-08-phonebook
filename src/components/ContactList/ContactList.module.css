@@ -1,8 +1,11 @@
 .list {
-  width: 420px;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 15px;
 }
 
 .item {
@@ -12,7 +15,6 @@
   width: 100%;
   padding: 10px;
   border: 1px solid grey;
-  margin-bottom: 10px;
 }
 
 .completed {
@@ -33,7 +35,7 @@
 .text {
   font-size: 16px;
   font-weight: 700;
-  margin-right: 10px;
+  margin: 0;
   text-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 

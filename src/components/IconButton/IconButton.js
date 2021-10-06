@@ -7,14 +7,17 @@ export default function IconButton({
   ...otherProps
 }) {
   return (
-    <button
-      type="button"
-      className={s.button}
-      onClick={onClick}
-      {...otherProps}
-    >
-      {children}
-    </button>
+    <div className={s.block}>
+      <span className={s.span}> Add: </span>
+      <button
+        type="button"
+        className={s.button}
+        onClick={onClick}
+        {...otherProps}
+      >
+        {children}
+      </button>
+    </div>
   );
 }
 

@@ -3,7 +3,7 @@ import { addContact } from '../../redux/phonebook';
 import { useDispatch } from 'react-redux';
 import s from './ContactForm.module.css';
 
-export default function ContactForm() {
+export default function ContactForm({ onSave }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
@@ -28,6 +28,7 @@ export default function ContactForm() {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(addContact(name, number));
+    onSave('');
     setName('');
     setNumber('');
   };

@@ -4,11 +4,11 @@ import s from './ContactList.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   deleteContact,
-  toggleCompleted,
+  // toggleCompleted,
   getVisibleContacts,
 } from '../../redux/phonebook';
 
-const ContactList = onSubmit => {
+const ContactList = () => {
   const contacts = useSelector(getVisibleContacts);
   const dispatch = useDispatch();
 
@@ -23,9 +23,9 @@ const ContactList = onSubmit => {
             type="checkbox"
             className={s.checkbox}
             checked={completed}
-            onChange={() =>
-              dispatch(toggleCompleted({ id, completed: !completed }))
-            }
+            // onChange={() =>
+            //   dispatch(toggleCompleted({ id, completed: !completed }))
+            // }
           />
           <p className={s.text}>
             {name}: {number}
